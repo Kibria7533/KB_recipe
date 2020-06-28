@@ -4,7 +4,7 @@ class Recipe extends Component {
 
     render() {
         return (
-            <div className="card border border-primary m-2" style={{width: "18rem"}}>
+            <div className="card border border-primary m-auto" style={{width: "18rem"}}>
             <img className="card-img-top" src={this.props.img} alt="Card image cap"/>
             <div className="card-body">
               <h5 className="card-title">Recipe:{this.props.title}</h5>

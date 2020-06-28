@@ -12,7 +12,7 @@ class App extends Component {
 
     }
   }
-  componentDidMount(){
+  async componentDidMount(){
     const response= await axios.get(`https://api.edamam.com/search?q=${this.state.name}&app_id=039f7dfc&app_key=64f9406d2b515cb59d2a1432cd37532f`)
     .then(item=>{
    this.setState({hits:item.data.hits});
@@ -43,7 +43,7 @@ class App extends Component {
                <form className="form-inline" onSubmit={this.sub}>
               <div className="form-group mx-sm-3 mb-2">
                 <label className="sr-only">Password</label>
-                <input type="text" name="name"className="form-control required" onChange={this.nameset} placeholder="Enter recipe name"></input>
+                <input type="text" name="name"className="form-control required" onChange={this.nameset} placeholder="Enter ingredients like banana,mango..etc"></input>
               </div>
               <button type="submit" className="btn btn-primary mb-2">Search</button>
             </form>
