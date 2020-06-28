@@ -12,7 +12,12 @@ class App extends Component {
 
     }
   }
-  
+  componentDidMount(){
+    const response= await axios.get(`https://api.edamam.com/search?q=${this.state.name}&app_id=039f7dfc&app_key=64f9406d2b515cb59d2a1432cd37532f`)
+    .then(item=>{
+   this.setState({hits:item.data.hits});
+  })
+  }
   nameset=e=>{
     this.setState({name:e.target.value});
   }
